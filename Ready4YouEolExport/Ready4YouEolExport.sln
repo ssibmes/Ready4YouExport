@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ready4YouEolExport", "Ready4YouEolExport.csproj", "{FE5EDEBC-03C7-4B60-B003-FC122AF2E3FC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Ready4YouEolExportSetup", "..\Ready4YouSetup\Ready4YouSetup.vdproj", "{920D20F6-F764-4835-B679-DFC9A4B854A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE5EDEBC-03C7-4B60-B003-FC122AF2E3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5EDEBC-03C7-4B60-B003-FC122AF2E3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5EDEBC-03C7-4B60-B003-FC122AF2E3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5EDEBC-03C7-4B60-B003-FC122AF2E3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920D20F6-F764-4835-B679-DFC9A4B854A5}.Debug|Any CPU.ActiveCfg = Debug
+		{920D20F6-F764-4835-B679-DFC9A4B854A5}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0A940E4-5192-4D54-A169-8B6B1A60F7F5}
+	EndGlobalSection
+EndGlobal
