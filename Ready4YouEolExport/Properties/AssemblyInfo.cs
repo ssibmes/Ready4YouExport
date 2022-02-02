@@ -59,5 +59,6 @@ using System.Runtime.InteropServices;
 //2021-06-17      1.0.11.0  Change in create access token method for EOL API 
 //2021-11-10      1.0.12.0  Bugfix in create access token method for EOL API 
 //2022-02-01      1.0.13.0  New Settings for Werksoort calculations using replacement werksoort. 
-[assembly: AssemblyVersion("1.0.13.0")]
-[assembly: AssemblyFileVersion("1.0.13.0")]
+//2022-02-01      1.0.13.1  replacement werksoort calculations missed in uursoort calculation. 
+[assembly: AssemblyVersion("1.0.13.1")]
+[assembly: AssemblyFileVersion("1.0.13.1")]

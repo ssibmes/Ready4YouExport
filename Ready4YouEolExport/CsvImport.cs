@@ -967,7 +967,7 @@ namespace Ready4YouEolExport
                             {
                                 rows[12] = Convert.ToDecimal(
                                                     Convert.ToDecimal(Convert.ToDecimal(Regex.Match(rows[12], @"\d*\.*\d*\,*\d+").Value).ToString("##.00"))
-                                                    * Convert.ToDecimal(rows[8]) / 100M
+                                                    * Convert.ToDecimal(CheckAndGetReplacement(rows[8])) / 100M
                                                     ).ToString("##.00");
                             }
                             else
