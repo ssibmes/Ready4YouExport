@@ -60,5 +60,10 @@ using System.Runtime.InteropServices;
 //2021-11-10      1.0.12.0  Bugfix in create access token method for EOL API 
 //2022-02-01      1.0.13.0  New Settings for Werksoort calculations using replacement werksoort. 
 //2022-02-01      1.0.13.1  replacement werksoort calculations missed in uursoort calculation. 
-[assembly: AssemblyVersion("1.0.13.1")]
-[assembly: AssemblyFileVersion("1.0.13.1")]
+//2022-02-07      1.0.13.2  replacement werksoort applied for ItemCode in xml, not in unitprice calculations. 
+//2022-02-12      1.0.13.3  replacement werksoort applied for ItemCode in xml, and also in unitprice calculations. 
+//2022-02-14      1.0.13.4  bug fix in uren calculations. 
+//2022-09-02      1.0.13.5  Removed 'PaymentCondition' tag from xml so that the client payment terms from EOL will be used by default. 
+//2024-02-13      1.0.14.0  New Item KM-EG in the kosten csv file - to be handled same as KM. 
+[assembly: AssemblyVersion("1.0.14.0")]
+[assembly: AssemblyFileVersion("1.0.14.0")]

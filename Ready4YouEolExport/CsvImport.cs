@@ -192,9 +192,9 @@ namespace Ready4YouEolExport
                                 ndInvoiceTo.SetAttribute("code", drJaarWeeknummerKlant["Klantnummer"].ToString());
                                 ndInvoice.AppendChild(ndInvoiceTo);
 
-                                XmlElement ndPaymentCondition = doc.CreateElement(string.Empty, "PaymentCondition", string.Empty);
-                                ndPaymentCondition.SetAttribute("code", ReadConfig("PaymentCondition"));
-                                ndInvoice.AppendChild(ndPaymentCondition);
+                                //XmlElement ndPaymentCondition = doc.CreateElement(string.Empty, "PaymentCondition", string.Empty);
+                                //ndPaymentCondition.SetAttribute("code", ReadConfig("PaymentCondition"));
+                                //ndInvoice.AppendChild(ndPaymentCondition);
                                 #endregion InvoiceHeader
 
                                 lineNo = 0;
@@ -300,7 +300,7 @@ namespace Ready4YouEolExport
                                         #region LineItems
                                         {
                                             XmlElement ndItem = doc.CreateElement(string.Empty, "Item", string.Empty);
-                                            ndItem.SetAttribute("code", itemCode);
+                                            ndItem.SetAttribute("code", CheckAndGetReplacementWerksoort(itemCode));
                                             ndInvoiceLine.AppendChild(ndItem);
 
                                             XmlElement ndQuantity = doc.CreateElement(string.Empty, "Quantity", string.Empty);
@@ -317,7 +317,7 @@ namespace Ready4YouEolExport
                                             ndInvoiceLine.AppendChild(ndQuantity);
 
                                             //if (drKlantnData.FileType == "Uren")
-                                            if (itemCode != "KM")
+                                            if (itemCode != "KM" && itemCode != "KM-EG")
                                             {
                                                 #region UnitPrice
                                                 XmlElement ndUnitPrice = doc.CreateElement(string.Empty, "UnitPrice", string.Empty);
@@ -572,7 +572,7 @@ namespace Ready4YouEolExport
                     unitPrice = string.IsNullOrEmpty(tbSpoed.Text.Trim()) ? 0 : Convert.ToDecimal(tbSpoed.Text.Trim());
                     if (werksoort.All(char.IsDigit))
                     {
-                        werksoort = CheckAndGetReplacement(werksoort);
+                        werksoort = CheckAndGetReplacementWerksoort(werksoort);
                         unitPrice *= Convert.ToDecimal(werksoort) / 100M;
                     }
                     break;
@@ -580,7 +580,7 @@ namespace Ready4YouEolExport
                     unitPrice = string.IsNullOrEmpty(tbUitzenden.Text.Trim()) ? 0 : Convert.ToDecimal(tbUitzenden.Text.Trim());
                     if (werksoort.All(char.IsDigit))
                     {
-                        werksoort = CheckAndGetReplacement(werksoort);
+                        werksoort = CheckAndGetReplacementWerksoort(werksoort);
                         unitPrice *= Convert.ToDecimal(werksoort) / 100M;
                     }
                     break;
@@ -589,7 +589,7 @@ namespace Ready4YouEolExport
             //round on 2 decimals
             return Convert.ToDecimal(unitPrice.ToString("##.00"));
         }
-        private string CheckAndGetReplacement(string werksoort)
+        private string CheckAndGetReplacementWerksoort(string werksoort)
         {
             foreach (DataGridViewRow dgvr in dgWerksoortInfo.Rows)
             {
@@ -967,7 +967,7 @@ namespace Ready4YouEolExport
                             {
                                 rows[12] = Convert.ToDecimal(
                                                     Convert.ToDecimal(Convert.ToDecimal(Regex.Match(rows[12], @"\d*\.*\d*\,*\d+").Value).ToString("##.00"))
-                                                    * Convert.ToDecimal(CheckAndGetReplacement(rows[8])) / 100M
+                                                    * Convert.ToDecimal(CheckAndGetReplacementWerksoort(rows[8])) / 100M
                                                     ).ToString("##.00");
                             }
                             else
